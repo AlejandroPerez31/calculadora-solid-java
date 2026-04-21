@@ -20,14 +20,3 @@ Solo se debe crear y añadir una nueva clase interna estática `Potencia` que he
 **4. ¿Qué pasa si ingreso validaciones de dominio? ¿Dónde irían?**
 Aplicando DDD (Domain-Driven Design), las validaciones no se ensucian metiéndolas en condicionales masivos en el menú visual. Éstas se ubican en la misma capa de dominio mediante la inyección estructurada o aislando las reglas (Value Objects). Las matemáticas dictan que una división entre 0 no existe, por tanto la validación recae en control del ambiente matemático y nunca en el menú del Scanner.
 
----
-
-## Evolución S.O.L.I.D. mediante TDD (Test-Driven Development)
-
-En este proyecto transformamos la arquitectura de manera iterativa utilizando pruebas unitarias tempranas para guiar la base del negocio. El progreso está evidenciado en la carpeta de pruebas `src/test/java/solid/`:
-
-* **S (Responsabilidad Única):** División jerárquica obligatoria implementada con componentes abstractos de una responsabilidad.
-* **O (Abierto/Cerrado):** Paquete `solid.o`: Las pruebas demostraron exitosamente que es posible extender operaciones agregando una nueva instancia matemática sin requerir modificar internamente a la Calculadora base.
-* **L (Sustitución de Liskov):** Paquete `solid.l`: Las pruebas constataron que las jerarquías respetan post-condiciones invariables; es decir, la Calculadora sustituyó a ciegas una instancia Suma por una División garantizando que no surgieran excepciones de rompimiento de contrato.
-* **I (Segregación de Interfaces):** Paquete `solid.i`: Mediante *Reflection API* obligamos a que una clase binaria jamás integre métodos muertos o no respaldados que sólo le competan a una clase unaria (evitando Interfaces Gordas).
-* **D (Inversión de Dependencia):** Paquete `solid.d`: Construimos tests usando infraestructura de simulación inyectada a los constructores (*Mocks*). Corroboramos formalmente que la lógica del negocio depende exclusivamente de utilidades altas o interfaces abstractas, liberándose por completo de tener que depender de componentes de hardware o bajo nivel (como el Scanner de consola).

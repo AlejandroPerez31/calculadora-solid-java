@@ -5,7 +5,7 @@ Una aplicación de consola implementada en Java que funciona como una calculador
 ## Respuestas al Cuestionario Teórico
 
 **1. ¿Qué responsabilidades tiene exactamente esta clase inicial?**
-En nuestro diseño las responsabilidades están bien distribuidas: cada clase como Suma solo calcula su operación, ProcesadorCalculadora conecta el menú con las matemáticas, y el main() solo se encarga de la interfaz con el usuario. No hay una sola clase cargando con todo.
+Las responsabilidades están bien distribuidas: cada clase como Suma solo calcula su operación, ProcesadorCalculadora conecta el menú con las matemáticas, y el main() solo se encarga de la interfaz con el usuario. No hay una sola clase cargando con todo.
 
 **2. Si quiero tener 2 menús distintos, ¿qué debería modificar?**
  En esta parte del codigo no se toca nada de la lógica. Solo se crean nuevas clases de presentación que usen el ProcesadorCalculadora que ya existe, sin romper nada.
